@@ -64,7 +64,8 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    // System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -121,7 +122,9 @@ public class TechJobs {
                 for (Map.Entry<String, String> jobs : someJobs.get(num).entrySet()) {
                     System.out.println(jobs.getKey() + ": " + jobs.getValue());
                 }
-                System.out.println("*****\n");
+                /* Added a counter to this to make things easy for me
+                  the num + 1 is so I don't have to remember to do the math */
+                System.out.println("***** " + (num + 1) + "\n");
             }
         }
     }
